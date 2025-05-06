@@ -108,7 +108,7 @@ public sealed class Cart
         if (discount is >= 100 or <= 0)
             throw new ArgumentOutOfRangeException(nameof(discount));
 
-        var fullDiscount = discount + PromoCode?.Discount ?? 0;
+        var fullDiscount = discount + (PromoCode?.Discount ?? 0);
 
         if (fullDiscount >= 100)
             throw new ArgumentException("Общая скидка не может быть больше 100%");
